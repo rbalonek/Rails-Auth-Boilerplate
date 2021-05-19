@@ -1,26 +1,3 @@
 # README
 
-https://git.generalassemb.ly/sei-nyc-bees/rails-react-auth-bcrypt
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-- Ruby version
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+Users can register, login, and logout. This is meant to be a boilerplate user auth for future projects.
