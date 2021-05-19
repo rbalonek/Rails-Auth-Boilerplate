@@ -19,7 +19,7 @@ export default function Login(props) {
 
   return (
     <div className="auth-container">
-      <h2>login</h2>
+      <h2>Login</h2>
       <hr />
       <form
         onSubmit={(e) => {
@@ -37,7 +37,7 @@ export default function Login(props) {
             placeholder="BobTest1"
           />
         </label>
-        <label>
+        <label style={{ marginLeft: "10px" }}>
           Password:
           <input
             name="password"
@@ -49,6 +49,8 @@ export default function Login(props) {
         </label>
         <hr />
         <button>Login</button>
+        <br />
+        <br />
         <Link to="/register">Register</Link>
       </form>
     </div>
