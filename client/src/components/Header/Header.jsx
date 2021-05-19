@@ -1,23 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Header(props) {
+  let history = useHistory();
   const { currentUser, handleLogout } = props;
   return (
     <header>
-      <h1>
-        <Link to="/">User Auth</Link>
+      <h1 className="banner">
+        <Link className="banner__text" to="/">
+          User Auth
+        </Link>
       </h1>
       <div>
         {currentUser ? (
           <>
             <p>User: {currentUser.username}</p>
-            <button onClick={handleLogout}>logout</button>
+            <button className="btn btn__primary" onClick={handleLogout}>
+              logout
+            </button>
           </>
         ) : (
-          <Link to="/login">
-            <button>Login / Register</button>
-          </Link>
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <Link to="/login">
+              <button className="btn btn__primary">Login</button>
+            </Link>
+            <button
+              onClick={() => history.push("/register")}
+              className="btn btn__secondary"
+            >
+              Register
+            </button>
+          </div>
         )}
       </div>
     </header>

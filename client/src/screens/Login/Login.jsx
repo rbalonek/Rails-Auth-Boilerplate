@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Login(props) {
   const [formData, setFormData] = useState({
@@ -19,40 +18,45 @@ export default function Login(props) {
 
   return (
     <div className="auth-container">
-      <h2>Login</h2>
       <hr />
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleLogin(formData);
-        }}
-      >
-        <label>
-          Username:
-          <input
-            name="username"
-            type="text"
-            value={username}
-            onChange={handleChange}
-            placeholder="BobTest1"
-          />
-        </label>
-        <label style={{ marginLeft: "10px" }}>
-          Password:
-          <input
-            name="password"
-            type="password"
-            value={password}
-            onChange={handleChange}
-            placeholder="123456"
-          />
-        </label>
-        <hr />
-        <button>Login</button>
-        <br />
-        <br />
-        <Link to="/register">Register</Link>
-      </form>
+
+      <div className="login-form__container">
+        <h2>Login</h2>
+        <div className="login-form-box">
+          <form
+            className="login-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleLogin(formData);
+            }}
+          >
+            <label>
+              Username:
+              <input
+                name="username"
+                type="text"
+                value={username}
+                onChange={handleChange}
+                placeholder="BobTest1"
+              />
+            </label>
+            <label style={{ position: "relative", left: "2px" }}>
+              Password:
+              <input
+                name="password"
+                type="password"
+                value={password}
+                onChange={handleChange}
+                placeholder="123456"
+              />
+            </label>
+
+            <button className="btn btn__primary btn-space">Login</button>
+            <br />
+            <br />
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
